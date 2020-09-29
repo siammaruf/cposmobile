@@ -1,0 +1,77 @@
+.cpos-plugin-wrap .tab-header-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background: #00b9eb;
+}
+
+.tab-content-wrap{
+    margin-top: 30px;
+}
+
+.cpos-plugin-wrap .tab-header-wrap a{
+    flex: 180px;
+    max-width: 180px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    padding: 16px 10px;
+    border-right: 1px solid #ffffff;
+}
+
+.cpos-forms .field-group button:focus,
+.cpos-plugin-wrap .tab-header-wrap a:focus{
+    outline: none;
+    box-shadow: none !important;
+}
+
+.cpos-plugin-wrap .tab-header-wrap a:last-child{
+    border-right: none;
+}
+
+.cpos-plugin-wrap .tab-header-wrap a.active{
+    background: #2195c5;
+}
+
+.cpos-tab-content {
+    display: none;
+}
+
+.cpos-tab-content.active {
+    display: block;
+}
+
+.cpos-forms{
+    margin-top: 30px;
+}
+
+.cpos-forms .field-group label{
+    margin-bottom: 5px;
+    display: block;
+    font-size: 14px;
+}
+
+.cpos-forms .field-group{
+ margin-bottom: 15px;
+}
+
+.cpos-forms .field-group input{
+    display: block;
+    border: 1px solid #dadada;
+    border-radius: 0;
+    width: 100%;
+    max-width: 450px;
+    padding: 5px 10px;
+}
+
+.cpos-forms .field-group button{
+    border-radius: 0;
+    padding: 10px 30px;
+    background: #2773aa;
+    box-shadow: none;
+    border: 1px solid;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
