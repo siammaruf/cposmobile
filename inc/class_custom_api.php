@@ -45,6 +45,16 @@ if ( !class_exists('customApi') ):
             ));
         }
 
+        function register_login_api_hooks() {
+            register_rest_route(
+                'pos/v1/', '/user/login/',
+                array(
+                    'methods'  => WP_REST_Server::CREATABLE,
+                    'callback' => array($this,'login'),
+                )
+            );
+        }
+
         /**
          * CustomApi callback_user_api_permission.
          */
@@ -142,6 +152,19 @@ if ( !class_exists('customApi') ):
             else:
                 return new WP_Error( '404', __( 'Woocommerce no activated or installed', 'cpos' ) );
             endif;
+        }
+
+        function login($request){
+            $creds = array();
+            $creds['user_login'] = $request["username"];
+            $creds['user_password'] =  $request["password"];
+            $creds['remember'] = true;
+            $user = wp_signon( $creds, false );
+
+            if ( is_wp_error($user) )
+                return new WP_Error( '404', __( 'User verification failed !', 'cpos' ) );
+
+            return new WP_REST_Response($user,200);
         }
     }
 endif;
